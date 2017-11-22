@@ -5,7 +5,7 @@ const express = require("express"),
 app.use("/", express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("public/index");
+  res.sendFile(process.cwd() + "/public/index.html");
 });
 
 app.get("/:date", (req, res) => {
