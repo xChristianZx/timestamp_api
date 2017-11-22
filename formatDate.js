@@ -7,7 +7,7 @@ const formatDate = reqTime => {
 
   //Check if valid date format
   if (isNaN(reqTime) && isNaN(new Date(reqTime))) {
-    return { unixTime: null, naturalTime: null, option: "3" };
+    return { unixTime: null, naturalTime: null };
   }
 
   // Natural Time
@@ -15,7 +15,7 @@ const formatDate = reqTime => {
     const setUnix = new Date(reqTime);
     const unixTime = setUnix.getTime() / 1000;
     const naturalTime = setUnix.toLocaleDateString("en-us", dateFormat);
-    return { unixTime, naturalTime, option: "1" };
+    return { unixTime, naturalTime };
   }
 
   // Unix Time
@@ -25,7 +25,7 @@ const formatDate = reqTime => {
       "en-us",
       dateFormat
     );
-    return { unixTime, naturalTime, option: "2" };
+    return { unixTime, naturalTime };
   }
 };
 

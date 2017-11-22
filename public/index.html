@@ -11,15 +11,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Timestamp Microservice</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
 </head>
 
 <body>
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-<h1>Timestamp Microservice</h1>
-<p>HERE I AM</p>
+    <div class="ui container segment">
+        <h1 class="ui header center aligned">Timestamp Microservice</h1>
+        <div class="ui container">
+            <h3>Usage</h3>
+            <p>Add unix time or natural date at the end of the root url</p>
+            <code>localhost:3000/<em> your time stamp here </em></code>
+
+            <h3>Example:</h3>
+            <code>url/1511251200</code>
+            <br>
+            <code>url/November 21, 2017</code>
+
+            <h3>This will return</h3>
+            <code>{unixTime": 1511251200, "naturalTime": "November 21, 2017",}</code>
+            <p>
+                <em>Note: If timestamp or date provided is not a provided, both values will return
+                    <code>null</code>
+                </em>
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>
