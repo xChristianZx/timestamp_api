@@ -1,14 +1,17 @@
 const express = require("express"),
   app = express(),
-  formatDate = require('./formatDate');
+  formatDate = require("./formatDate");
+
+app.use("/", express.static('public'))
 
 app.get("/", (req, res) => {
-  res.send("TIMESTAMP HOME");
+  res.render("public/index");
 });
 
 app.get("/:date", (req, res) => {
   const reqDate = req.params.date;
-  res.json(formatDate(reqDate));
+  const formattedRes = formatDate(reqDate);
+  res.json(formattedRes);
 });
 
 app.listen(3000, () => {
